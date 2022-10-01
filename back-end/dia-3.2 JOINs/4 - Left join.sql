@@ -1,9 +1,9 @@
 USE Pixar;
 
-SELECT m.*, t.* FROM Movies m
-LEFT JOIN Theater t
+SELECT m.*, t.* FROM Theater t
+LEFT JOIN Movies m
 ON m.theater_id = t.id
-ORDER BY m.title ASC
+ORDER BY t.name ASC
 ;
 
 /*
