@@ -1,0 +1,5 @@
+use('teste');
+
+db.bios.find({}, {}).limit(3);
+
+// using the limit method
