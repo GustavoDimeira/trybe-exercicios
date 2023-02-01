@@ -1,0 +1,5 @@
+use('teste');
+
+db.bios.find({ "name.first": "John" }).pretty()
+
+// Qeurry an object
