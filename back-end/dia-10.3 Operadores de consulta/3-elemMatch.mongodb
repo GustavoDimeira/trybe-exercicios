@@ -3,6 +3,6 @@
 use movies
 
 db.movies.find({
-  ratings: { $elemMatch: 103 }
+  ratings: { $elemMatch: { $gte: 103 } }
 },
 { title: 1, ratings: 1 });
