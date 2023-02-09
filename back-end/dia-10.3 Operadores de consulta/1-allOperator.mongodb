@@ -2,4 +2,4 @@
 
 use cinema;
 
-db.movies.find(({ category: { $all:['action', 'adventure'] } }, {title: 1, category: 1}));
+db.movies.find({ category: { $all:['action', 'adventure'] } }, { title: 1});
