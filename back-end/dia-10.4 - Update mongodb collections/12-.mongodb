@@ -1,0 +1,8 @@
+// Utilizando uma única operação, remova o campo e estimatedBudget em todos os documentos.
+
+use cinema;
+
+db.movies.updateMany(
+  {},
+  { $unset: { estimatedBudget: "" } },
+);
