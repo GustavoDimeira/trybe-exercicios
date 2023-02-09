@@ -1,3 +1,8 @@
 // Utilizando o operador $regex, retorne todos os filmes em que a descrição comece com a palavra "The".
 
+use movies
 
+db.movies.find({
+  description: { $regex: /The^/ }
+},
+{ title: 1 });
