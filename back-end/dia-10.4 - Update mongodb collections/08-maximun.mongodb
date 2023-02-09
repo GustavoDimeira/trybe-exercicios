@@ -1,0 +1,8 @@
+//  Altere o estimatedBudget para que não exista nenhum menor que 5.
+
+use cinema;
+
+db.movies.updateMany(
+  {},
+  { $max: { estimatedBudget: 5 } },
+);

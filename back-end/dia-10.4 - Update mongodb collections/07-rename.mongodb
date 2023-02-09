@@ -1,0 +1,8 @@
+// Renomeie o campo budget para estimatedBudget.
+
+use cinema;
+
+db.movies.updateMany(
+  {},
+  { $rename: { budget: "estimatedBudget" } },
+);
