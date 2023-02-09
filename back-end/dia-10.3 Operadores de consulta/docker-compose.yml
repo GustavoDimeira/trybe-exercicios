@@ -10,4 +10,4 @@ services:
         - ./file-json:/file-json
         - ./db:/data/db
       ports:
-        - 8081:27017
+        - 8082:27017
