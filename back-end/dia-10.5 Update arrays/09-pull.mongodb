@@ -1,0 +1,16 @@
+// Adicione o campo character com o valor Marv ao array de cast em que o campo actor seja igual a Daniel Stern no filme Home Alone.
+
+use("cinema");
+
+db.movies.updateOne(
+  {
+    title: "Home Alone",
+  },
+  {
+    $set: {
+      "cast.2.character": "Marv"
+    }
+  }
+);
+
+db.movies.findOne({title: "Home Alone"});
