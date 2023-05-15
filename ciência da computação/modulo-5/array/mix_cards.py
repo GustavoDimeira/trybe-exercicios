@@ -15,21 +15,24 @@ cartas por parte = 3
 resultado = [1, 7, 4, 6, 4, 6]
 """
 
+
 def mix_cards(cards):
     middle_index = len(cards) // 2
     list1, list2 = cards[:middle_index], cards[middle_index:]
 
     positions = []
 
-    while(len(positions) < len(cards)):
+    while (len(positions) < len(cards)):
         number = int(random.random() * len(cards))
-        if (not number in positions): positions.append(number)
+        if (not number in positions):
+            positions.append(number)
 
     mixed_cards = []
 
     for index in positions:
         if (index < middle_index):
             mixed_cards.append(list1[index])
-        else: mixed_cards.append(list2[index - middle_index])
+        else:
+            mixed_cards.append(list2[index - middle_index])
 
     return mixed_cards
