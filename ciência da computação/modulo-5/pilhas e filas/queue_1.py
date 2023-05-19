@@ -7,7 +7,10 @@ class Queue:
         self.tail_value = None
         self.__length = 0
 
-    def print_values(self):        
+    def __str__(self):
+        return f"Node(value={self.head_value})"
+
+    def print_values(self):
         crr_value = self.head_value
         for x in range(self.__length):
             print("Posição: ", x, "\nValor: ", crr_value.value, "\n\n")
