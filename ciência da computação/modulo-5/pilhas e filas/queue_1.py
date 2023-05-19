@@ -13,7 +13,7 @@ class Queue:
             print("Posição: ", x, "\nValor: ", crr_value.value, "\n\n")
             crr_value = crr_value.next
 
-    def push(self, value):
+    def enqueue(self, value):
         last_value = Node(value)
         old_last = self.tail_value
 
@@ -28,7 +28,7 @@ class Queue:
         self.__length += 1
         return last_value
 
-    def pop(self):
+    def dequeue(self):
         new_last = self.tail_value.previous
         old_last = self.tail_value
 
@@ -36,25 +36,32 @@ class Queue:
         self.tail_value = new_last
 
         self.__length -= 1
-        return old_last
+        return old_last.value
+    
+    def peek(self):
+        return self.tail_value.value
 
 
 queue = Queue()
 
 queue.print_values()
 
-queue.push("gustavo")
-queue.push("dimeira")
-queue.push(1)
-queue.push(2)
-queue.push(3)
-queue.push({"a": 1, "b": 2, "c": "c"})
-queue.push([1, 2, 3])
+queue.enqueue("gustavo")
+queue.enqueue("dimeira")
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue({"a": 1, "b": 2, "c": "c"})
+queue.enqueue([1, 2, 3])
+
+print(queue.peek())
 
 queue.print_values()
 print("-----")
-print(queue.pop())
+print(queue.dequeue())
 print("-----")
-print(queue.pop())
+print(queue.dequeue())
 print("-----")
 queue.print_values()
+
+print(queue.peek())
