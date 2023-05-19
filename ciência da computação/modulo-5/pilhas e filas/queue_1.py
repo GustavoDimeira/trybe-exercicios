@@ -29,14 +29,14 @@ class Queue:
         return last_value
 
     def dequeue(self):
-        new_last = self.tail_value.previous
-        old_last = self.tail_value
+        old_first = self.head_value
+        new_first = old_first.next
+        new_first.previous = None
 
-        new_last.next = None
-        self.tail_value = new_last
-
+        self.head_value = new_first
         self.__length -= 1
-        return old_last.value
+
+        return old_first.value
     
     def peek(self):
         return self.tail_value.value
